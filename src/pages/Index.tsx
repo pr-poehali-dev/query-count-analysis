@@ -13,7 +13,7 @@ export default function Index() {
   const amount = parseFloat(getParam("amount", "248500"));
 
   const [displayed, setDisplayed] = useState(0);
-  const [clicked, setClicked] = useState(false);
+
 
   useEffect(() => {
     const duration = 1800;
@@ -62,41 +62,22 @@ export default function Index() {
       <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-8 gap-5">
 
         {/* Card 1 — Amount */}
-        <div className="w-full max-w-md" style={{ animation: "fadeUp 0.6s ease-out both" }}>
-          <div className="rounded-3xl p-px" style={{
+        <div className="w-full max-w-sm" style={{ animation: "fadeUp 0.6s ease-out both" }}>
+          <div className="rounded-2xl p-px" style={{
             background: "linear-gradient(135deg, rgba(255,200,0,0.6), rgba(255,200,0,0.1), rgba(255,200,0,0.4))"
           }}>
-            <div className="rounded-3xl px-8 py-9 relative overflow-hidden" style={{
+            <div className="rounded-2xl px-6 py-6 relative overflow-hidden" style={{
               background: "linear-gradient(160deg, #111111 0%, #0d0d0d 100%)"
             }}>
               <div className="absolute top-0 left-0 right-0 h-px opacity-60" style={{
                 background: "linear-gradient(90deg, transparent, #ffc800, transparent)"
               }} />
 
-              <div className="text-center mb-2">
-                <span className="text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full" style={{
-                  color: "#ffc800",
-                  background: "rgba(255,200,0,0.08)",
-                  border: "1px solid rgba(255,200,0,0.2)"
-                }}>
-                  Входящий платёж
-                </span>
-              </div>
-
-              <p className="text-center text-white/50 text-sm mt-5 mb-1">На ваше имя</p>
-              <h2 className="text-center font-bold text-2xl mb-7" style={{
-                fontFamily: "'Oswald', sans-serif",
-                letterSpacing: "0.03em",
-                color: "#ffffff"
-              }}>
-                {clientName}
-              </h2>
-
-              <p className="text-center text-white/40 text-sm mb-3">Сумма поступивших средств</p>
-              <div className="text-center relative">
+              <p className="text-center text-white/40 text-xs mb-2 uppercase tracking-widest">Сумма поступивших средств</p>
+              <div className="text-center">
                 <span className="font-black" style={{
                   fontFamily: "'Oswald', sans-serif",
-                  fontSize: "clamp(2.5rem, 10vw, 4rem)",
+                  fontSize: "clamp(2rem, 9vw, 3.2rem)",
                   lineHeight: 1,
                   background: "linear-gradient(135deg, #ffc800 0%, #ffe066 50%, #ffc800 100%)",
                   WebkitBackgroundClip: "text",
@@ -108,53 +89,49 @@ export default function Index() {
                 </span>
               </div>
 
-              <div className="flex items-center justify-center gap-2 mt-6">
-                <div className="w-2 h-2 rounded-full" style={{ background: "#ffc800", boxShadow: "0 0 6px #ffc800" }} />
-                <span className="text-white/30 text-xs">от {COMPANY_NAME}</span>
+              <div className="flex items-center justify-center gap-2 mt-3">
+                <div className="w-1.5 h-1.5 rounded-full" style={{ background: "#ffc800", boxShadow: "0 0 5px #ffc800" }} />
+                <span className="text-white/25 text-xs">от {COMPANY_NAME} · {clientName}</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Card 2 — Get funds */}
-        <div className="w-full max-w-md" style={{ animation: "fadeUp 0.7s 0.12s ease-out both" }}>
-          <div className="rounded-3xl p-px" style={{
+        <div className="w-full max-w-sm" style={{ animation: "fadeUp 0.7s 0.12s ease-out both" }}>
+          <div className="rounded-2xl p-px" style={{
             background: "linear-gradient(135deg, rgba(255,200,0,0.6), rgba(255,200,0,0.1), rgba(255,200,0,0.4))"
           }}>
-            <div className="rounded-3xl px-8 py-8 relative overflow-hidden" style={{
+            <div className="rounded-2xl px-6 py-6 relative overflow-hidden" style={{
               background: "linear-gradient(160deg, #111111 0%, #0d0d0d 100%)"
             }}>
               <div className="absolute top-0 left-0 right-0 h-px opacity-60" style={{
                 background: "linear-gradient(90deg, transparent, #ffc800, transparent)"
               }} />
 
-              <p className="text-center text-white/50 text-sm mb-5">Готовы получить ваши средства</p>
-
-              <button
-                onClick={() => setClicked(true)}
-                className="w-full py-4 rounded-2xl font-bold transition-all duration-300 active:scale-95"
+              <a
+                href="https://t.me/YOUR_BOT"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-4 rounded-xl font-bold transition-all duration-300 active:scale-95 flex items-center justify-center gap-2"
                 style={{
                   fontFamily: "'Oswald', sans-serif",
                   letterSpacing: "0.06em",
-                  fontSize: "1.15rem",
-                  background: clicked ? "#1a1a1a" : "#ffc800",
-                  color: clicked ? "#ffc800" : "#0a0a0a",
+                  fontSize: "1.1rem",
+                  background: "#ffc800",
+                  color: "#0a0a0a",
                   border: "2px solid #ffc800",
-                  boxShadow: clicked ? "0 0 20px rgba(255,200,0,0.15)" : "0 0 32px rgba(255,200,0,0.45)"
+                  boxShadow: "0 0 32px rgba(255,200,0,0.45)",
+                  textDecoration: "none"
                 }}
               >
-                <span className="flex items-center justify-center gap-2">
-                  {clicked ? (
-                    <><Icon name="CheckCircle" size={22} />Заявка отправлена</>
-                  ) : (
-                    <><Icon name="Wallet" size={22} />Получить средства</>
-                  )}
-                </span>
-              </button>
+                <Icon name="Wallet" size={20} />
+                Получить средства
+              </a>
 
-              <div className="flex items-center justify-center gap-2 mt-5">
-                <Icon name="ShieldCheck" size={14} />
-                <span className="text-white/25 text-xs">Защищено SSL-шифрованием · Данные зашифрованы</span>
+              <div className="flex items-center justify-center gap-2 mt-4">
+                <Icon name="ShieldCheck" size={13} />
+                <span className="text-white/25 text-xs">Защищено SSL-шифрованием</span>
               </div>
             </div>
           </div>
