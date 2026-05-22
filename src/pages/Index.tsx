@@ -43,18 +43,34 @@ export default function Index() {
       <header className="relative z-10 flex items-center px-6 pt-8 pb-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{
-            background: "#ffc800",
-            boxShadow: "0 0 20px rgba(255,200,0,0.35)"
+            background: "#c9a000",
+            boxShadow: "0 0 14px rgba(201,160,0,0.25)"
           }}>
             <Icon name="Landmark" size={20} />
           </div>
           <span className="font-bold text-xl" style={{
             fontFamily: "'Oswald', sans-serif",
             letterSpacing: "0.04em",
-            color: "#ffc800"
+            color: "#c9a000"
           }}>
             {COMPANY_NAME}
           </span>
+        </div>
+
+        {/* Top right — trust badges */}
+        <div className="ml-auto flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
+            <Icon name="ShieldCheck" size={13} />
+            <span className="text-white/40 text-xs">PCI DSS</span>
+          </div>
+          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
+            <Icon name="Globe" size={13} />
+            <span className="text-white/40 text-xs">200+ стран</span>
+          </div>
+          <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
+            <Icon name="Lock" size={13} />
+            <span className="text-white/40 text-xs">SSL</span>
+          </div>
         </div>
       </header>
 
@@ -64,7 +80,7 @@ export default function Index() {
         {/* Card 1 — Amount */}
         <div className="w-full max-w-sm" style={{ animation: "fadeUp 0.6s ease-out both" }}>
           <div className="rounded-2xl p-px" style={{
-            background: "linear-gradient(135deg, rgba(255,200,0,0.6), rgba(255,200,0,0.1), rgba(255,200,0,0.4))"
+            background: "linear-gradient(135deg, rgba(201,160,0,0.35), rgba(201,160,0,0.08), rgba(201,160,0,0.25))"
           }}>
             <div className="rounded-2xl px-6 py-6 relative overflow-hidden" style={{
               background: "linear-gradient(160deg, #111111 0%, #0d0d0d 100%)"
@@ -79,7 +95,7 @@ export default function Index() {
                   fontFamily: "'Oswald', sans-serif",
                   fontSize: "clamp(2rem, 9vw, 3.2rem)",
                   lineHeight: 1,
-                  background: "linear-gradient(135deg, #ffc800 0%, #ffe066 50%, #ffc800 100%)",
+                  background: "linear-gradient(135deg, #c9a000 0%, #e8c840 50%, #c9a000 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundSize: "200% auto",
@@ -90,7 +106,7 @@ export default function Index() {
               </div>
 
               <div className="flex items-center justify-center gap-2 mt-3">
-                <div className="w-1.5 h-1.5 rounded-full" style={{ background: "#ffc800", boxShadow: "0 0 5px #ffc800" }} />
+                <div className="w-1.5 h-1.5 rounded-full" style={{ background: "#c9a000" }} />
                 <span className="text-white/25 text-xs">от {COMPANY_NAME}</span>
               </div>
             </div>
@@ -100,7 +116,7 @@ export default function Index() {
         {/* Card 2 — Get funds */}
         <div className="w-full max-w-sm" style={{ animation: "fadeUp 0.7s 0.12s ease-out both" }}>
           <div className="rounded-2xl p-px" style={{
-            background: "linear-gradient(135deg, rgba(255,200,0,0.6), rgba(255,200,0,0.1), rgba(255,200,0,0.4))"
+            background: "linear-gradient(135deg, rgba(201,160,0,0.35), rgba(201,160,0,0.08), rgba(201,160,0,0.25))"
           }}>
             <div className="rounded-2xl px-6 py-6 relative overflow-hidden" style={{
               background: "linear-gradient(160deg, #111111 0%, #0d0d0d 100%)"
@@ -118,10 +134,10 @@ export default function Index() {
                   fontFamily: "'Oswald', sans-serif",
                   letterSpacing: "0.06em",
                   fontSize: "1.1rem",
-                  background: "#ffc800",
+                  background: "#c9a000",
                   color: "#0a0a0a",
-                  border: "2px solid #ffc800",
-                  boxShadow: "0 0 32px rgba(255,200,0,0.45)",
+                  border: "2px solid #c9a000",
+                  boxShadow: "0 0 24px rgba(201,160,0,0.3)",
                   textDecoration: "none"
                 }}
               >
@@ -153,7 +169,7 @@ export default function Index() {
                 </span>
               </div>
               <p className="text-white/30 text-xs leading-relaxed">
-                Международная система денежных переводов. Работаем с 1851 года.
+                Международная система денежных переводов. Работаем с 2016 года.
               </p>
             </div>
 
@@ -185,31 +201,8 @@ export default function Index() {
             </div>
           </div>
 
-          {/* FAQ */}
-          <div className="rounded-2xl px-6 py-6 mb-8" style={{ background: "rgba(255,200,0,0.04)", border: "1px solid rgba(255,200,0,0.1)" }}>
-            <h4 className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-5">Частые вопросы</h4>
-            <div className="space-y-4">
-              {[
-                { q: "Как долго идёт перевод?", a: "Средства зачисляются в течение 1–3 рабочих дней после подтверждения." },
-                { q: "Безопасно ли передавать данные?", a: "Все данные защищены SSL-шифрованием и соответствуют стандартам PCI DSS." },
-                { q: "Какая комиссия?", a: "Получение средств через данную ссылку осуществляется без комиссии." },
-              ].map(({ q, a }) => (
-                <div key={q} className="border-b pb-4 last:border-0 last:pb-0" style={{ borderColor: "rgba(255,200,0,0.08)" }}>
-                  <p className="text-white/60 text-sm font-semibold mb-1">{q}</p>
-                  <p className="text-white/30 text-sm">{a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Bottom */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-3">
-            <p className="text-white/20 text-xs">© 2024 Western Union Holdings, Inc. Все права защищены.</p>
-            <div className="flex items-center gap-3">
-              {["Visa", "Mastercard", "SWIFT"].map(b => (
-                <span key={b} className="text-white/20 text-xs px-2 py-1 rounded" style={{ border: "1px solid rgba(255,255,255,0.08)" }}>{b}</span>
-              ))}
-            </div>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-3 pt-2">
+            <p className="text-white/15 text-xs">© 2024 Western Union Holdings, Inc. Все права защищены.</p>
           </div>
         </div>
       </footer>
@@ -220,7 +213,7 @@ export default function Index() {
           {/* Bubble */}
           <div className="rounded-2xl px-4 py-3 flex items-center gap-3" style={{
             background: "#1a1a1a",
-            border: "1px solid rgba(255,200,0,0.25)",
+            border: "1px solid rgba(201,160,0,0.2)",
             boxShadow: "0 8px 32px rgba(0,0,0,0.5)"
           }}>
             <div className="relative">
@@ -228,7 +221,7 @@ export default function Index() {
                 src="https://cdn.poehali.dev/projects/4465bc63-d1f1-4e74-b786-a400c4413919/files/e76bee03-0e38-44a7-b5e1-f5623dd2eb22.jpg"
                 alt="Alex"
                 className="w-10 h-10 rounded-full object-cover"
-                style={{ border: "2px solid #ffc800" }}
+                style={{ border: "2px solid #c9a000" }}
               />
               <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-400" style={{ border: "2px solid #1a1a1a" }} />
             </div>
