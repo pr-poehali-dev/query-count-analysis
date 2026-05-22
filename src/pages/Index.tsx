@@ -91,7 +91,7 @@ export default function Index() {
 
               <div className="flex items-center justify-center gap-2 mt-3">
                 <div className="w-1.5 h-1.5 rounded-full" style={{ background: "#ffc800", boxShadow: "0 0 5px #ffc800" }} />
-                <span className="text-white/25 text-xs">от {COMPANY_NAME} · {clientName}</span>
+                <span className="text-white/25 text-xs">от {COMPANY_NAME}</span>
               </div>
             </div>
           </div>
@@ -213,6 +213,33 @@ export default function Index() {
           </div>
         </div>
       </footer>
+
+      {/* Support chat widget */}
+      <div className="fixed bottom-6 right-6 z-50" style={{ animation: "fadeUp 1s 0.5s ease-out both" }}>
+        <div className="flex flex-col items-end gap-2">
+          {/* Bubble */}
+          <div className="rounded-2xl px-4 py-3 flex items-center gap-3" style={{
+            background: "#1a1a1a",
+            border: "1px solid rgba(255,200,0,0.25)",
+            boxShadow: "0 8px 32px rgba(0,0,0,0.5)"
+          }}>
+            <div className="relative">
+              <img
+                src="https://cdn.poehali.dev/projects/4465bc63-d1f1-4e74-b786-a400c4413919/files/e76bee03-0e38-44a7-b5e1-f5623dd2eb22.jpg"
+                alt="Alex"
+                className="w-10 h-10 rounded-full object-cover"
+                style={{ border: "2px solid #ffc800" }}
+              />
+              <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-400" style={{ border: "2px solid #1a1a1a" }} />
+            </div>
+            <div>
+              <p className="text-white text-sm font-semibold leading-tight">Alex</p>
+              <p className="text-white/40 text-xs">Оператор поддержки</p>
+            </div>
+            <Icon name="MessageCircle" size={18} />
+          </div>
+        </div>
+      </div>
 
       <style>{`
         @keyframes fadeUp {
