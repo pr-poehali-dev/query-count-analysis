@@ -34,42 +34,44 @@ export default function Index() {
   return (
     <div className="min-h-screen flex flex-col" style={{ fontFamily: "'Golos Text', sans-serif", background: "#0a0a0a" }}>
 
-      {/* Background glow */}
-      <div className="fixed inset-0 pointer-events-none" style={{
-        background: "radial-gradient(ellipse 70% 50% at 15% 10%, rgba(255,200,0,0.08) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 85% 80%, rgba(255,180,0,0.06) 0%, transparent 55%)"
-      }} />
+      {/* Background photo */}
+      <div className="fixed inset-0 pointer-events-none">
+        <img
+          src="https://cdn.poehali.dev/projects/4465bc63-d1f1-4e74-b786-a400c4413919/files/584c1c70-e5af-4f18-a953-f7214e4ca799.jpg"
+          alt=""
+          className="w-full h-full object-cover"
+          style={{ opacity: 0.18 }}
+        />
+        <div className="absolute inset-0" style={{
+          background: "linear-gradient(to bottom, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.3) 40%, rgba(10,10,10,0.7) 100%)"
+        }} />
+      </div>
 
       {/* Header */}
       <header className="relative z-10 flex items-center px-6 pt-8 pb-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{
-            background: "#c9a000",
-            boxShadow: "0 0 14px rgba(201,160,0,0.25)"
+            background: "#f5e000",
+            boxShadow: "0 0 16px rgba(245,224,0,0.3)"
           }}>
             <Icon name="Landmark" size={20} />
           </div>
           <span className="font-bold text-xl" style={{
             fontFamily: "'Oswald', sans-serif",
             letterSpacing: "0.04em",
-            color: "#c9a000"
+            color: "#f5e000"
           }}>
             {COMPANY_NAME}
           </span>
         </div>
 
-        {/* Top right — trust badges */}
-        <div className="ml-auto flex items-center gap-3">
-          <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
-            <Icon name="ShieldCheck" size={13} />
-            <span className="text-white/40 text-xs">PCI DSS</span>
-          </div>
-          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
-            <Icon name="Globe" size={13} />
-            <span className="text-white/40 text-xs">200+ стран</span>
-          </div>
-          <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
-            <Icon name="Lock" size={13} />
-            <span className="text-white/40 text-xs">SSL</span>
+        {/* Top right — profile */}
+        <div className="ml-auto">
+          <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{
+            background: "rgba(255,255,255,0.07)",
+            border: "1px solid rgba(255,255,255,0.12)"
+          }}>
+            <Icon name="User" size={20} />
           </div>
         </div>
       </header>
@@ -95,7 +97,7 @@ export default function Index() {
                   fontFamily: "'Oswald', sans-serif",
                   fontSize: "clamp(2rem, 9vw, 3.2rem)",
                   lineHeight: 1,
-                  background: "linear-gradient(135deg, #c9a000 0%, #e8c840 50%, #c9a000 100%)",
+                  background: "linear-gradient(135deg, #f5e000 0%, #fff176 50%, #f5e000 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundSize: "200% auto",
@@ -106,7 +108,7 @@ export default function Index() {
               </div>
 
               <div className="flex items-center justify-center gap-2 mt-3">
-                <div className="w-1.5 h-1.5 rounded-full" style={{ background: "#c9a000" }} />
+                <div className="w-1.5 h-1.5 rounded-full" style={{ background: "#f5e000" }} />
                 <span className="text-white/25 text-xs">от {COMPANY_NAME}</span>
               </div>
             </div>
@@ -134,10 +136,10 @@ export default function Index() {
                   fontFamily: "'Oswald', sans-serif",
                   letterSpacing: "0.06em",
                   fontSize: "1.1rem",
-                  background: "#c9a000",
+                  background: "#f5e000",
                   color: "#0a0a0a",
-                  border: "2px solid #c9a000",
-                  boxShadow: "0 0 24px rgba(201,160,0,0.3)",
+                  border: "2px solid #f5e000",
+                  boxShadow: "0 0 24px rgba(245,224,0,0.35)",
                   textDecoration: "none"
                 }}
               >
@@ -221,7 +223,7 @@ export default function Index() {
                 src="https://cdn.poehali.dev/projects/4465bc63-d1f1-4e74-b786-a400c4413919/files/e76bee03-0e38-44a7-b5e1-f5623dd2eb22.jpg"
                 alt="Alex"
                 className="w-10 h-10 rounded-full object-cover"
-                style={{ border: "2px solid #c9a000" }}
+                style={{ border: "2px solid #f5e000" }}
               />
               <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-400" style={{ border: "2px solid #1a1a1a" }} />
             </div>
